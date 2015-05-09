@@ -1,38 +1,12 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
+export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
 
-# For ROS
-export PATH=/usr/local/bin:$PATH
-source ~/Code/ros/install_isolated/setup.zsh
-source ~/Code/bbauv/devel/setup.zsh
-source ~/Code/image_transport_plugins/devel/setup.zsh
-export ROS_WORKSPACE=~/Code/bbauv/src
-#export ROS_HOSTNAME="localhost"
-
-alias sshbbauv="ssh bbauvsbc1@bbauv"
-alias bbauv="export ROS_MASTER_URI=http://bbauv:11311; export ROS_IP=$(ipconfig getifaddr en0)"
-alias auv="cd ~/Code/bbauv/Scripts; ./auv_lynnette.sh True"
-alias vision="cd ~/Code/bbauv/src/vision/scripts; ./vision_thres_lynnette.sh"
-alias image="bbauv; rqt"
-# For Robosub 2014
-alias torpedo="cd ~/Code/bbauv/src/vision/scripts; ./scp_lynnette.sh torpedo"
-alias buoy="cd ~/Code/bbauv/src/vision/scripts; ./scp_lynnette.sh rgb_buoy"
-
-# Personal alias
-alias caf="caffeinate"
-alias vi="vim"
-
-# Set name of the theme to load.
+#Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-#ZSH_THEME="robbyrussell"
 ZSH_THEME="alanpeabody"
-
-# Plugins
-# Syntax highlighting must be in last position
-export ZSH_CUSTOM=~/.oh-my-zsh/custom/
-plugins=(tmux git zsh-syntax-highlighting)
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -50,7 +24,7 @@ plugins=(tmux git zsh-syntax-highlighting)
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
+ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # COMPLETION_WAITING_DOTS="true"
@@ -68,14 +42,21 @@ plugins=(tmux git zsh-syntax-highlighting)
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
-source $ZSH/oh-my-zsh.sh
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(git zsh-syntax-highlighting)
 
 # User configuration
 
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
+source $ZSH/oh-my-zsh.sh
+
 # You may need to manually set your language environment
-export LANG=en_US.UTF-8
+# export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -84,6 +65,18 @@ export LANG=en_US.UTF-8
 #   export EDITOR='mvim'
 # fi
 
+# Compilation flags
+# export ARCHFLAGS="-arch x86_64"
+
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
+# Set personal aliases, overriding those provided by oh-my-zsh libs,
+# plugins, and themes. Aliases can be placed here, though oh-my-zsh
+# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+# For a full list of active aliases, run `alias`.
+#
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
+alias port="/opt/local/bin/port"
