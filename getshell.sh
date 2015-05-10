@@ -6,6 +6,7 @@ chsh -s /bin/zsh
 
 # Use my config file
 echo Getting quarbby\'s .zshrc config file...
+mv .zshrc .zshrc.usr
 wget https://github.com/quarbby/config-files-/blob/master/.zshrc
 
 # Syntax highlighting 
