@@ -4,7 +4,7 @@
 ![Current shell May 2015](shell.png)
 
 ```
-$ wget https://github.com/quarbby/config-files-/blob/master/getshell.sh
+$ wget https://github.com/quarbby/config-files-/raw/master/getshell.sh
 $ cd [path to getshell.sh script]
 $ ./getshell.sh
 ```
