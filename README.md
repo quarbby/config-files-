@@ -8,3 +8,6 @@ $ wget https://github.com/quarbby/config-files-/raw/master/getshell.sh
 $ cd [path to getshell.sh script]
 $ ./getshell.sh
 ```
+
+### Current vim configuration
+![Current Vim Configuration](vim.png)
